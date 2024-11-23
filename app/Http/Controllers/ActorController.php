@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CastFilm;
+use App\Models\Actor;
 use Illuminate\Http\Request;
 
-class CastFilmController extends Controller
+class ActorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class CastFilmController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CastFilm $castFilm)
+    public function show(Actor $actor)
     {
         //
     }
@@ -42,7 +42,7 @@ class CastFilmController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CastFilm $castFilm)
+    public function edit(Actor $actor)
     {
         //
     }
@@ -50,7 +50,7 @@ class CastFilmController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CastFilm $castFilm)
+    public function update(Request $request, Actor $actor)
     {
         //
     }
@@ -58,7 +58,7 @@ class CastFilmController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CastFilm $castFilm)
+    public function destroy(Actor $actor)
     {
         //
     }

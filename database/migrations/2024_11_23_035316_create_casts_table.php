@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->tinyInteger('age')->unsigned();
             $table->text('bio')->nullable();
-            $table->string('role')->nullable(); // Peran
             $table->timestamps();
         });
     }
