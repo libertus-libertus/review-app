@@ -43,7 +43,7 @@
             <li class="header">MASTER DATA</li>
             {{-- @auth --}}
             <li>
-                <a href="#">
+                <a href="{{ route('cast.index') }}">
                     <i class="fa fa-cubes" aria-hidden="true"></i>
                     <span>Cast</span>
                 </a>
