@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Film;
 use App\Models\Review;
 use Illuminate\Http\Request;
 
@@ -26,9 +27,21 @@ class ReviewController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $filmId)
     {
-        //
+        $request->validate([
+            'content' => 'required|string|max:1000',
+            'rating' => 'required|integer|between:1,5',
+        ]);
+
+        $film = Film::findOrFail($filmId);
+        $film->reviews()->create([
+            'user_id' => auth()->id(),
+            'content' => $request->content,
+            'rating' => $request->rating,
+        ]);
+
+        return redirect()->route('film.show', $filmId)->with('success', 'Review and rating added successfully.');
     }
 
     /**

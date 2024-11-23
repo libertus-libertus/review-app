@@ -1,11 +1,5 @@
 @extends('pages.main')
-@section('title')
-Detail data film
-@endsection
-
-@section('subTitle')
-Detail Data Film
-@endsection
+@section('title', 'Detail data film')
 
 @section('content')
 <section class="content">
@@ -15,7 +9,6 @@ Detail Data Film
                 <div class="box-header with-border">
                     <h3 class="box-title">Berikut detail film</h3>
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body">
                     <img src="{{ asset('films/'.$film->poster) }}" alt="poster-film" width="100%">
 
@@ -59,25 +52,17 @@ Detail Data Film
                                     <option value="1">★☆☆☆☆ (Terrible)</option>
                                 </select>
                             </div>
+                            <button type="submit" class="btn btn-primary btn-sm">Submit Review</button>
                         </form>
                     @else
-                        <p>Please <a href="{{ route('login') }}">login</a> untuk memberikan review.</p>
+                        <p>Please <a href="{{ route('login') }}">login</a> to write a review and rating.</p>
                     @endauth
 
-                    @auth
-                    <input type="submit" class="btn btn-xs btn-flat btn-primary" value="Kirim Review">
-                    <a href="{{ route('film.index') }}" class="btn btn-xs btn-flat btn-warning">
+                    <a href="{{ route('film.index') }}" class="btn btn-warning btn-xs" style="margin-top: 10px">
                         <i class="fa fa-arrow-left" aria-hidden="true"></i>
                         Kembali ke Home
                     </a>
-                    @else
-                    <a href="{{ route('film.index') }}" class="btn btn-xs btn-flat btn-warning">
-                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                        Kembali ke Home
-                    </a>
-                    @endauth
                 </div>
-                <!-- /.box-body -->
             </div>
         </div>
     </div>

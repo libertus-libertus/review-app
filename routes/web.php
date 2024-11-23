@@ -4,6 +4,7 @@ use App\Http\Controllers\CastController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cast', CastController::class);
     Route::resource('genre', GenreController::class);
     Route::post('film/{id}/review', [FilmController::class, 'storeReview'])->name('film.review.store');
+    Route::post('film/{id}/review', [ReviewController::class, 'store'])->name('film.review.store');
 });
 
 Route::get('film', [FilmController::class, 'index'])->name('film.index');
