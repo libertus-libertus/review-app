@@ -18,20 +18,23 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('pages.main');
+Route::get('/', function() {
+    return view('bantuan');
 });
 
 Route::resource('genre', GenreController::class);
 Route::resource('cast', CastController::class);
-Route::resource('film', FilmController::class);
 Route::get('bantuan', [DashboardController::class, 'index'])->name('bantuan');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('profile', [UserProfileController::class, 'edit'])->name('profile.edit');
     Route::put('profile', [UserProfileController::class, 'update'])->name('profile.update');
+
+    Route::resource('film', FilmController::class);
+    Route::post('film/{id}/review', [FilmController::class, 'storeReview'])->name('film.review.store');
 });
+
+Route::get('film', [FilmController::class, 'index'])->name('film.index');
 
 Auth::routes();
 

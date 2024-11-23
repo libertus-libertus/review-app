@@ -45,7 +45,7 @@ Direkomendasikan untukmu
                                         <a href="{{ route('film.show', $item->id) }}"
                                             class="btn btn-xs btn-flat btn-info">
                                             <i class="fa fa-eye" aria-hidden="true"></i>
-                                            Detail
+                                            Review
                                         </a>
                                         <a href="{{ route('film.edit', $item->id) }}"
                                             class="btn btn-xs btn-flat btn-warning">

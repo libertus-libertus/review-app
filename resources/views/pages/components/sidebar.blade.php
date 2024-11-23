@@ -61,13 +61,6 @@
                     <span>Genre</span>
                 </a>
             </li>
-            {{-- @auth --}}
-            <li>
-                <a href="#">
-                    <i class="fa fa-history" aria-hidden="true"></i>
-                    <span>Review</span>
-                </a>
-            </li>
             {{-- @endauth --}}
             <li class="header">PENGATURAN</li>
             {{-- @auth --}}
