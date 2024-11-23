@@ -48,6 +48,11 @@ Seluruh Data Genres
                                     <div class="btn-group">
                                         <form action="{{ route('genre.destroy', $item->id) }}" method="POST"
                                             style="display:inline;">
+                                            <a href="{{ route('genre.show', $item->id) }}"
+                                                class="btn btn-xs btn-flat btn-info">
+                                                <i class="fa fa-edit" aria-hidden="true"></i>
+                                                Detail
+                                            </a>
                                             <a href="{{ route('genre.edit', $item->id) }}"
                                                 class="btn btn-xs btn-flat btn-warning">
                                                 <i class="fa fa-edit" aria-hidden="true"></i>

@@ -44,7 +44,7 @@ class GenreController extends Controller
     public function show($id)
     {
         $genre = Genre::find($id);
-        return view('pages.views.genre.edit', compact('genre'));
+        return view('pages.views.genre.detail', compact('genre'));
     }
 
     /**

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CastController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FilmController;
 use App\Http\Controllers\GenreController;
 use App\Models\Genre;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +24,5 @@ Route::get('/', function () {
 
 Route::resource('genre', GenreController::class);
 Route::resource('cast', CastController::class);
+Route::resource('film', FilmController::class);
+Route::get('bantuan', [DashboardController::class, 'index'])->name('bantuan');

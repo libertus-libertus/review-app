@@ -50,7 +50,7 @@
             </li>
             {{-- @endauth --}}
             <li>
-                <a href="#">
+                <a href="{{ route('film.index') }}">
                     <i class="fa fa-film" aria-hidden="true"></i>
                     <span>Trending Movies</span>
                 </a>
@@ -79,7 +79,7 @@
             </li>
             {{-- @endauth --}}
             <li>
-                <a href="#">
+                <a href="{{ route('bantuan') }}">
                     <i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span>Bantuan</span>
                 </a>
