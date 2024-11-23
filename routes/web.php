@@ -22,8 +22,6 @@ Route::get('/', function() {
     return view('bantuan');
 });
 
-Route::resource('genre', GenreController::class);
-Route::resource('cast', CastController::class);
 Route::get('bantuan', [DashboardController::class, 'index'])->name('bantuan');
 
 Route::middleware(['auth'])->group(function () {
@@ -31,11 +29,14 @@ Route::middleware(['auth'])->group(function () {
     Route::put('profile', [UserProfileController::class, 'update'])->name('profile.update');
 
     Route::resource('film', FilmController::class);
+    Route::resource('cast', CastController::class);
+    Route::resource('genre', GenreController::class);
     Route::post('film/{id}/review', [FilmController::class, 'storeReview'])->name('film.review.store');
 });
 
 Route::get('film', [FilmController::class, 'index'])->name('film.index');
+Route::get('film/{film}', [FilmController::class, 'show'])->name('film.show');
+Route::get('genre', [GenreController::class, 'index'])->name('genre.index');
+Route::get('genre/{genre}', [GenreController::class, 'show'])->name('genre.show');
 
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

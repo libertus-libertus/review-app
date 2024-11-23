@@ -4,9 +4,9 @@ Genres
 @endsection
 
 @section('subTitle')
-{{-- @auth --}}
+@auth
 Seluruh Data Genres
-{{-- @endauth --}}
+@endauth
 @endsection
 
 @push('css')
@@ -15,7 +15,7 @@ Seluruh Data Genres
 @endpush
 
 @section('content')
-{{-- @auth --}}
+@auth
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
@@ -26,7 +26,6 @@ Seluruh Data Genres
                         Tambah Data
                     </a>
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body">
                     <table id="table-data" class="table table-bordered table-striped">
                         <thead>
@@ -78,9 +77,9 @@ Seluruh Data Genres
         </div>
     </div>
 </section>
-{{-- @else --}}
+@else
 
-{{-- <section class="content">
+<section class="content">
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
@@ -91,9 +90,9 @@ Seluruh Data Genres
                     </div>
                     <div class="col-md-11">
                         @foreach ($genre as $item)
-                        <span
-                            class="label {{ $loop->iteration % 2 ? 'label-warning' : 'label-primary' }}">{{ $item->name }}</span>
-                        <br>
+                        <a href="{{ route('genre.show', $item->id) }}">
+                            <span class="label {{ $loop->iteration % 2 ? 'label-warning' : 'label-primary' }}">{{ $item->name }}</span>
+                        </a> <br>
                         @endforeach
                     </div>
                 </div>
@@ -101,7 +100,7 @@ Seluruh Data Genres
         </div>
     </div>
 </section>
-@endauth --}}
+@endauth
 @endsection
 
 @push('js')

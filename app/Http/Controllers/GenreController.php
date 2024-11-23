@@ -43,8 +43,12 @@ class GenreController extends Controller
      */
     public function show($id)
     {
-        $genre = Genre::find($id);
-        return view('pages.views.genre.detail', compact('genre'));
+        // Cari genre berdasarkan ID
+        $genre = Genre::findOrFail($id);
+
+         // Ambil semua film yang memiliki genre_id sesuai
+         $films = $genre->films;
+        return view('pages.views.genre.detail', compact('genre', 'films'));
     }
 
     /**

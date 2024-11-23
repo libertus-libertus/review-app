@@ -13,14 +13,13 @@ Direkomendasikan untukmu
         <div class="col-xs-12">
             <div class="box box-primary">
                 <div class="box-header">
-                    {{-- @auth --}}
+                    @auth
                     <a href="{{ route('film.create') }}" class="btn btn-xs btn-info">
                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         Tambah Data
                     </a>
-                    {{-- @endauth --}}
+                    @endauth
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body">
                     <div class="row">
                         @foreach ($film as $item)
@@ -39,7 +38,7 @@ Direkomendasikan untukmu
                                 </div>
                                 <hr>
                                 <div class="btn-group">
-                                    {{-- @auth --}}
+                                    @auth
                                     <form action="{{ route('film.destroy', $item->id) }}" method="POST"
                                         style="display:inline;">
                                         <a href="{{ route('film.show', $item->id) }}"
@@ -60,16 +59,13 @@ Direkomendasikan untukmu
                                             Delete
                                         </button>
                                     </form>
-                                    {{-- @else
-                                    <a href="{{ route('film.show', $item->id) }}" class="btn btn-xs btn-flat btn-primary">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        Detail Film
-                                    </a>
-                                    <a href="{{ route('film.create') }}" class="btn btn-xs btn-warning btn-flat">
+                                    @else
+                                    <a href="{{ route('film.show', $item->id) }}"
+                                        class="btn btn-xs btn-flat btn-warning">
                                         <i class="fa fa-history" aria-hidden="true"></i>
-                                        Review Sekarang
+                                        Review Film
                                     </a>
-                                    @endauth --}}
+                                    @endauth
                                 </div>
                             </div>
                         </div>
