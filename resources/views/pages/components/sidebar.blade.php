@@ -35,7 +35,7 @@
         <!-- /.search form -->
         <ul class="sidebar-menu" data-widget="tree">
             <li>
-                <a href="#">
+                <a href="{{ route('film.index') }}">
                     <i class="fa fa-th" aria-hidden="true"></i>
                     <span>Halaman Beranda</span>
                 </a>

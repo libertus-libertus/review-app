@@ -1,7 +1,7 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="{{ url('/') }}" class="logo">
+    <a href="{{ route('film.index') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>L</b>S</span>
         <!-- logo for regular state and mobile devices -->
@@ -35,13 +35,13 @@
             <ul class="nav navbar-nav">
                 <!-- Control Sidebar Toggle Button -->
                 <li>
-                    <a href="#">
+                    <a href="{{ route('login') }}">
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
                         Masuk
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('register') }}">
                         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                         Daftar
                     </a>
