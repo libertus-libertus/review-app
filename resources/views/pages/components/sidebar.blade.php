@@ -75,7 +75,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://github.com/libertus-libertus/review-film" target="_blank">
+                <a href="https://github.com/libertus-libertus/review-app" target="_blank">
                     <i class="fa fa-github" aria-hidden="true"></i>
                     <span>Documentation</span>
                 </a>
