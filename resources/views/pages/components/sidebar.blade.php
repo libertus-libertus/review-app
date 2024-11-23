@@ -72,7 +72,7 @@
             <li class="header">PENGATURAN</li>
             {{-- @auth --}}
             <li>
-                <a href="#">
+                <a href="{{ route('profile.edit') }}">
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                     <span>Settings</span>
                 </a>

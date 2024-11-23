@@ -4,6 +4,7 @@ use App\Http\Controllers\CastController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,11 @@ Route::resource('genre', GenreController::class);
 Route::resource('cast', CastController::class);
 Route::resource('film', FilmController::class);
 Route::get('bantuan', [DashboardController::class, 'index'])->name('bantuan');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('profile', [UserProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('profile', [UserProfileController::class, 'update'])->name('profile.update');
+});
 
 Auth::routes();
 
