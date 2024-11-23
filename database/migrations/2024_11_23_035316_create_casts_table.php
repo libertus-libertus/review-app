@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('casts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->date('date_of_birth')->nullable();
+            $table->tinyInteger('age')->unsigned();
             $table->text('bio')->nullable();
-            $table->string('profile_picture')->nullable();
+            $table->string('role')->nullable(); // Peran
             $table->timestamps();
         });
     }
